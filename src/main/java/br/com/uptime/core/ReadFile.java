@@ -26,6 +26,12 @@ public class ReadFile {
 		InputStream fis = new FileInputStream(new File(path));
 		return new BufferedReader(new InputStreamReader(fis));
 	}
+	
+	public List<String> getLineList() throws IOException {
+		List<String> values = new ArrayList<>();
+		lines.forEach(l -> values.add(l));
+		return values;
+	}
 
 	public List<String> getValuePosition(int initial, int finaly) throws IOException {
 		List<String> values = new ArrayList<>();

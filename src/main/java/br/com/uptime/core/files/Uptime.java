@@ -1,4 +1,4 @@
-package br.com.uptime.core;
+package br.com.uptime.core.files;
 
 import java.io.BufferedWriter;
 import java.io.File;

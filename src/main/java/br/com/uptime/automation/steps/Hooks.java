@@ -7,8 +7,8 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import br.com.uptime.core.CommandWebDriver;
-import br.com.uptime.core.Uptime;
+import br.com.uptime.core.command.CommandWebDriver;
+import br.com.uptime.core.files.Uptime;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;

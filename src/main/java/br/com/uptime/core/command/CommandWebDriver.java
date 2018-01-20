@@ -1,4 +1,4 @@
-package br.com.uptime.core;
+package br.com.uptime.core.command;
 
 import java.io.IOException;
 

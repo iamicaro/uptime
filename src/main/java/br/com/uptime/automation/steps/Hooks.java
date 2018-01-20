@@ -1,4 +1,4 @@
-package br.com.uptime.steps;
+package br.com.uptime.automation.steps;
 
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -7,8 +7,8 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import core.CommandWebDriver;
-import core.Uptime;
+import br.com.uptime.core.CommandWebDriver;
+import br.com.uptime.core.Uptime;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;

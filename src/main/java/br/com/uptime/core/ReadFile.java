@@ -1,4 +1,4 @@
-package core;
+package br.com.uptime.core;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -32,18 +32,15 @@ public class ReadFile {
 		lines.forEach(l -> values.add(l.substring(initial, finaly)));
 		return values;
 	}
-
-	public static void main(String[] args) throws IOException {
-
-		ReadFile readFile = new ReadFile("teste", "txt");
-
-		for(String value : readFile.getValuePosition(50, 52)) {
-			System.out.println(value);
-		}
-		
-		for(String value : readFile.getValuePosition(0, 23)) {
-			System.out.println(value);
-		}
-
+	
+	public List<String> getValuePositionSee(String see, int initial, int finaly) throws IOException {
+		List<String> values = new ArrayList<>();
+		lines.forEach(l ->{
+			final String text = l.substring(initial, finaly);
+			if(text.equalsIgnoreCase(see)){
+				values.add(text);
+			}
+		});
+		return values;
 	}
 }

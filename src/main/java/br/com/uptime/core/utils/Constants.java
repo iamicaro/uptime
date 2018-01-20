@@ -1,4 +1,4 @@
-package br.com.uptime.utils;
+package br.com.uptime.core.utils;
 
 public class Constants {
 

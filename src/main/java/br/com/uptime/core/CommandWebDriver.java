@@ -1,4 +1,4 @@
-package core;
+package br.com.uptime.core;
 
 import java.io.IOException;
 
@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import br.com.uptime.utils.Constants;
+import br.com.uptime.core.utils.Constants;
 
 public class CommandWebDriver {
 

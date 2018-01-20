@@ -17,8 +17,13 @@ public class PropertiesConfig {
 	 * @author Ícaro Silva
 	 * @throws IOException
 	 */
-	public Properties getProperties() throws IOException {
-		Properties props = this.getProps();
+	public Properties getProperties() {
+		Properties props = null;
+		try {
+			props = this.getProps();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		return props;
 	}
 	

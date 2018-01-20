@@ -11,9 +11,9 @@ import org.apache.log4j.Logger;
 
 public class Uptime {
 	
-	private static String sistema = null;
-	private static String horaInicio = null;
-	private static String horaFinal = null;
+	private static String system = null;
+	private static String clockStart = null;
+	private static String clockFinish = null;
 	private static String status = null;
 	
 	PropertiesConfig propertiesConfig = new PropertiesConfig();
@@ -26,7 +26,7 @@ public class Uptime {
 	 * @author Ícaro Silva
 	 * @throws IOException
 	 */
-	public void update() throws IOException {
+	public void load() throws IOException {
 		
 		final String path = propertiesConfig.getProperties().getProperty("app.dir.logger") + "logger_uptime.csv";
 		File file = new File(path);
@@ -45,7 +45,7 @@ public class Uptime {
 		FileWriter fw = new FileWriter(file, true);
 		BufferedWriter bw = new BufferedWriter(fw);
 		
-		bw.write(this.getSistema() + ";" + this.getHoraInicio() + ";" + this.getHoraFinal() + ";" + this.getStatus());
+		bw.write(this.getSystem() + ";" + this.getClockStart() + ";" + this.getClockFinish() + ";" + this.getStatus());
 		bw.newLine();
 		bw.close();
 		fw.close();
@@ -56,18 +56,18 @@ public class Uptime {
 	}
 	
 	@SuppressWarnings("static-access")
-	public void setSistema(String sistema) {
-		 this.sistema = sistema;
+	public void setSystem(String sistema) {
+		 this.system = sistema;
 	}
 	
 	@SuppressWarnings("static-access")
-	public void setHoraInicio(String horaInicio) {
-		this.horaInicio = horaInicio;
+	public void setClockStart(String clockStart) {
+		this.clockStart = clockStart;
 	}
 	
 	@SuppressWarnings("static-access")
-	public void setHoraFinal(String horaFinal) {
-		this.horaFinal = horaFinal;
+	public void setClockFinish(String clockFinish) {
+		this.clockFinish = clockFinish;
 	}
 	
 	@SuppressWarnings("static-access")
@@ -82,8 +82,8 @@ public class Uptime {
 	 * @author Ícaro Silva
 	 * @throws IOException
 	 */
-	public String getSistema() {
-		return sistema;
+	public String getSystem() {
+		return system;
 	}
 
 	/**
@@ -93,8 +93,8 @@ public class Uptime {
 	 * @author Ícaro Silva
 	 * @throws IOException
 	 */
-	public String getHoraInicio() {
-		return horaInicio;
+	public String getClockStart() {
+		return clockStart;
 	}
 
 	/**
@@ -104,8 +104,8 @@ public class Uptime {
 	 * @author Ícaro Silva
 	 * @throws IOException
 	 */
-	public String getHoraFinal() {
-		return horaFinal;
+	public String getClockFinish() {
+		return clockFinish;
 	}
 
 	/**

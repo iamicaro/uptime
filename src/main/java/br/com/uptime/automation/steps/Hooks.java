@@ -22,15 +22,15 @@ public class Hooks {
 		PropertyConfigurator.configure(Paths.get("").toAbsolutePath().toString() + "\\src\\main\\resources\\log4j.properties");
 		CommandWebDriver.loadWebDriver();
 		Logger.getLogger("org.openqa.selenium.remote").setLevel(Level.OFF);
-		uptime.setHoraInicio(uptime.getDateNow());
+		uptime.setClockStart(uptime.getDateNow());
 	}
 	
 	@After
 	public void finalize(Scenario scenario) throws InterruptedException, IOException {
-		uptime.setHoraFinal(uptime.getDateNow());
-		CommandWebDriver.getWebDriver().quit();
+		uptime.setClockFinish(uptime.getDateNow());
 		uptime.setStatus(scenario.isFailed() ? "FAILED" : "PASSED");
-		uptime.update();
+		uptime.load();
+		CommandWebDriver.getWebDriver().quit();
 	}
 	
 }

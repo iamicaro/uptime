@@ -12,7 +12,7 @@ public class ReadFile {
 	private static PropertiesConfig propertiesConfig = new PropertiesConfig();
 	
 	public static BufferedReader load(String nameFile, String typeFile) throws IOException {
-		final String path = propertiesConfig.getProperties().getProperty("app.dir.teste") + nameFile + "." + typeFile.toLowerCase();
+		final String path = propertiesConfig.getProperties().getProperty("app.dir.files") + nameFile + "." + typeFile.toLowerCase();
 		InputStream fis = new FileInputStream(new File(path));
 	
 		return new BufferedReader(new InputStreamReader(fis));

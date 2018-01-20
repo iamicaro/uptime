@@ -1,8 +1,9 @@
 #language: pt
-#version: 1.0
-#encoding: iso-8859-1
 #author: Ícaro Silva
 #automation: Ícaro Silva
+#version: 1.0
+#encoding: iso-8859-1
+
 Funcionalidade: Verificar disponibilidade do sistema STAR
   
   - Narrativa: Validar disponibilidade do sistema STAR

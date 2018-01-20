@@ -1,9 +1,7 @@
 package core;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -30,33 +28,27 @@ public class Uptime {
 	 */
 	public void update() throws IOException {
 		
-		String diretorio = propertiesConfig.getProperties().getProperty("app.dir.logger");
-		File arquivo = new File(diretorio + "logger_uptime.csv");
+		final String path = propertiesConfig.getProperties().getProperty("app.dir.logger") + "logger_uptime.csv";
+		File file = new File(path);
 		
 		try {
-			if (!arquivo.exists()) {
-				arquivo.createNewFile();
-				FileWriter fw = new FileWriter(arquivo, true);
+			if (!file.exists()) {
+				file.createNewFile();
+				FileWriter fw = new FileWriter(file, true);
 				BufferedWriter bw = new BufferedWriter(fw);
-				bw.write("SISTEMA;INICIO;FIM;STATUS");
+				bw.write("SYSTEM;START;FINISH;STATUS");
 				bw.newLine();
 				bw.close();
 				fw.close();
 			}
 		 
-		FileWriter fw = new FileWriter(arquivo, true);
+		FileWriter fw = new FileWriter(file, true);
 		BufferedWriter bw = new BufferedWriter(fw);
 		
 		bw.write(this.getSistema() + ";" + this.getHoraInicio() + ";" + this.getHoraFinal() + ";" + this.getStatus());
 		bw.newLine();
 		bw.close();
 		fw.close();
-		
-		FileReader fr = new FileReader(arquivo);
-		BufferedReader br = new BufferedReader(fr);
-		 
-		br.close();
-		fr.close();
 		 
 		} catch (IOException ex) {
 			ex.printStackTrace();

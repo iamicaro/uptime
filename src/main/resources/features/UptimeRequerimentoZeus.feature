@@ -4,16 +4,16 @@
 #version: 1.0
 #encoding: iso-8859-1
 
-Funcionalidade: Verificar disponibilidade do sistema STAR
+Funcionalidade: Verificar disponibilidade do sistema Requerimento Zeus
   
-  - Narrativa: Validar disponibilidade do sistema STAR
+  - Narrativa: Verificar disponibilidade do sistema Requerimento Zeus
   
   - Fora de escopo: Outros sistemas
 
   Contexto: 
-    Dado que esteja na pagina de login no Star
+    Dado que esteja na pagina de login no Zeus
 
-  @IDSTAR
+  @IDZEUS
   Cenario: Validar disponibilidade do sistema STAR
-    Quando logar no Star
+    Quando logar no Zeus
     Entao validar pagina inicial

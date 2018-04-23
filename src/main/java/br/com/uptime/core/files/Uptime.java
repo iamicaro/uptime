@@ -14,7 +14,7 @@ public class Uptime {
 	private static String system = null;
 	private static String clockStart = null;
 	private static String clockFinish = null;
-	private static String status = null;
+	private static String statusTest = null;
 	
 	PropertiesConfig propertiesConfig = new PropertiesConfig();
 	final Logger logger = Logger.getLogger(Uptime.class);
@@ -28,7 +28,7 @@ public class Uptime {
 	 */
 	public void load() throws IOException {
 		
-		final String path = propertiesConfig.getProperties().getProperty("app.dir.logger") + "logger_uptime.csv";
+		final String path = propertiesConfig.getProperties("application.properties").getProperty("app.dir.logger") + "logger_uptime.csv";
 		File file = new File(path);
 		
 		try {
@@ -55,24 +55,20 @@ public class Uptime {
 		}
 	}
 	
-	@SuppressWarnings("static-access")
 	public void setSystem(String sistema) {
-		 this.system = sistema;
+		 system = sistema;
 	}
 	
-	@SuppressWarnings("static-access")
-	public void setClockStart(String clockStart) {
-		this.clockStart = clockStart;
+	public void setClockStart(String clock) {
+		clockStart = clock;
 	}
 	
-	@SuppressWarnings("static-access")
-	public void setClockFinish(String clockFinish) {
-		this.clockFinish = clockFinish;
+	public void setClockFinish(String clock) {
+		clockFinish = clock;
 	}
 	
-	@SuppressWarnings("static-access")
 	public void setStatus(String status) {
-		this.status = status;
+		statusTest = status;
 	}
 	
 	/**
@@ -116,7 +112,7 @@ public class Uptime {
 	 * @throws IOException
 	 */
 	public String getStatus() {
-		return status;
+		return statusTest;
 	}
 	
 	/**

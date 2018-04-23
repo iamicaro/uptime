@@ -40,7 +40,7 @@ public class ReadFile {
 	 * @throws IOException
 	 */
 	private static BufferedReader load(String nameFile, String typeFile) throws IOException {
-		final String path = propertiesConfig.getProperties().getProperty("app.dir.files") + nameFile + "." + typeFile.toLowerCase();
+		final String path = propertiesConfig.getProperties("application.properties").getProperty("app.dir.files") + nameFile + "." + typeFile.toLowerCase();
 		InputStream fis = new FileInputStream(new File(path));
 		return new BufferedReader(new InputStreamReader(fis));
 	}

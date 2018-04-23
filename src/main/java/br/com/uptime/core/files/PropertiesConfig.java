@@ -17,10 +17,10 @@ public class PropertiesConfig {
 	 * @author Ícaro Silva
 	 * @throws IOException
 	 */
-	public Properties getProperties() {
+	public Properties getProperties(String filePath) {
 		Properties props = null;
 		try {
-			props = this.getProps();
+			props = this.getProps(filePath);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -34,10 +34,10 @@ public class PropertiesConfig {
 	 * @author Ícaro Silva
 	 * @throws IOException
 	 */
-	private Properties getProps() throws IOException {
+	private Properties getProps(String filePath) throws IOException {
 		Properties props = new Properties();
 		FileInputStream file = new FileInputStream(
-				"./src/main/resources/application.properties");
+				"./src/main/resources/" + filePath);
 		props.load(file);
 		return props;
 	}

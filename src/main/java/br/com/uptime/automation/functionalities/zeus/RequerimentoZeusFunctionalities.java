@@ -13,7 +13,8 @@ public class RequerimentoZeusFunctionalities {
 	
 	public void pageZeus() {
 		uptime.setSystem("ZEUS");
-		CommandWebDriver.getWebDriver().get("https://aplic.inmetrics.com.br//requerimento/content/login.php");
+		CommandWebDriver.navigate("");
+		
 	}
 	
 	public void login() {		

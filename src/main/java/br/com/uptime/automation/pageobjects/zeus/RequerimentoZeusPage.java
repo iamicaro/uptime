@@ -9,17 +9,17 @@ public class RequerimentoZeusPage {
 
 	public WebElement getIdentificacao() {
 		final String xpath = "//input[@id='fun_Id']";
-		return CommandWebDriver.getWebDriver().findElement(By.xpath(xpath));
+		return CommandWebDriver.getInstance().findElement(By.xpath(xpath));
 	}
 	
 	public WebElement getSenha() {
 		final String xpath = "//input[@id='fun_Senha']";
-		return CommandWebDriver.getWebDriver().findElement(By.xpath(xpath));
+		return CommandWebDriver.getInstance().findElement(By.xpath(xpath));
 	}
 	
 	public WebElement getContinuar() {
 		final String xpath = "//input[@id='btnSubmitLogn']";
-		return CommandWebDriver.getWebDriver().findElement(By.xpath(xpath));
+		return CommandWebDriver.getInstance().findElement(By.xpath(xpath));
 	}
 	
 }

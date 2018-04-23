@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import br.com.uptime.core.utils.Constants;
+import br.com.uptime.core.utils.enums.Browser;
 
 public class CommandWebDriver {
 
@@ -21,9 +22,22 @@ public class CommandWebDriver {
 	 * @author Ícaro Silva
 	 * @throws IOException
 	 */
-	public static void loadWebDriver() {
- 		System.setProperty(Constants.KEY, Constants.CHROME_DRIVER);
-		driver = new ChromeDriver();
+	public static void createInstance(Browser browser) {
+ 		
+		System.setProperty(Constants.KEY, Constants.CHROME_DRIVER);
+ 		
+ 		switch(browser) {
+ 		
+ 		case CHROME:
+ 		
+ 			driver = new ChromeDriver();
+ 			break;
+ 			
+ 		case INTERNET_EXPLORE:
+ 			
+ 		case FIREFOX:	
+ 		
+ 		} 
 	}
 	
 	/**
@@ -33,7 +47,30 @@ public class CommandWebDriver {
 	 * @author Ícaro Silva
 	 * @throws IOException
 	 */
-	public static WebDriver getWebDriver() {
+	public static WebDriver getInstance() {
 		return driver;
 	}
+	
+	/**
+	 *	Método responsável por navegar pela url.
+	 * 
+	 * @since 22/04/2018
+	 * @author Ícaro Silva
+	 * @throws IOException
+	 */
+	public static void navigate(String url) {
+		driver.get(url);
+	}
+	
+	/**
+	 *	Método responsável por fechar o webdriver
+	 * 
+	 * @since 22/04/2018
+	 * @author Ícaro Silva
+	 * @throws IOException
+	 */
+	public static void quit() {
+		driver.quit();
+	}
+	
 }

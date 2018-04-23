@@ -14,7 +14,6 @@ public class RequerimentoZeusFunctionalities {
 	public void pageZeus() {
 		uptime.setSystem("ZEUS");
 		CommandWebDriver.navigate("");
-		
 	}
 	
 	public void login() {		
@@ -24,6 +23,6 @@ public class RequerimentoZeusFunctionalities {
 	}
 	
 	public void validarPaginaInicial()  {
-		System.out.println("ACERTOU!!");
+		System.out.println();
 	}
 }
